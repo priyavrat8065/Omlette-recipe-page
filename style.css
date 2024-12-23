@@ -16,8 +16,15 @@ qualified-headings: false
   padding: 0;
   box-sizing: border-box;
 }
+/* CSS VARIABLES */
+:root {
+  --body-font: 400 1rem "Outfit", serif;
+  --body-bold-600-font: 600 1rem "Outfit", serif;
+  --body-bold-700-font: 700 1rem "Outfit", serif;
+  --heading-font: 400 2rem "Young Serif", serif;
+}
 body {
-  font-family: "Outfit", serif;
+  font: var(--body-font);
 }
 img {
   display: block;
@@ -46,15 +53,13 @@ section {
   background: hsl(30, 18%, 87%);
 }
 h1 {
-  font-family: "Young Serif", serif;
+  font: var(--heading-font);
   margin-bottom: 1.5rem;
-  font-weight: 400;
   /*  color: hsl(30, 10%, 34%);*/
   color: hsl(24, 5%, 18%);
 }
 p {
   line-height: 1.5;
-  font-weight: 400;
   color: hsl(30, 10%, 34%);
 }
 .nutrition-table p {
@@ -62,6 +67,12 @@ p {
 }
 
 /* DEEP CODE */
+.bold-600 {
+  font: var(--body-bold-600-font);
+}
+.bold-700 {
+  font: var(--body-bold-700-font);
+}
 .ingredients h1,
 .nutrition h1,
 .instruction h1 {
@@ -97,15 +108,9 @@ li {
 .cooking-time li::marker {
   color: hsl(332, 51%, 32%);
 }
-.cooking-time span,
-.ingredients span {
-  display: block;
-  transform: translateY(-25%);
-  /*  top: -0.5rem;*/
-}
-.ingredients li:nth-child(4) {
+/*.ingredients li:nth-child(4) {
   padding-bottom: 1.5rem;
-}
+}*/
 /*.nutrition-table {
   display: flex;
   padding-left: 2rem;
@@ -122,14 +127,10 @@ li {
   position: absolute;
   left: 58%;
   color: hsl(14, 45%, 36%);
-  font-weight: 700;
 }
 .nutrients .line {
   width: inherit;
   margin: 1rem 0;
-}
-b {
-  font-weight: 600;
 }
 
 @media screen and (min-width: 375px) {
